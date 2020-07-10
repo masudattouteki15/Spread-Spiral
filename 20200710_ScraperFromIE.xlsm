@@ -53,8 +53,8 @@ Sub ScrapeOpenedPage()
     Set htmlDoc = objIE.document
     
     ' 欲しいクラス名の中の文字列を取得する。
-    MsgBox htmlDoc.getElementsByClassName("license")(0).innerHTML
-    
+    'MsgBox htmlDoc.getElementsByClassName("license")(0).innerHTML
+    Cells(1, 1).Value = htmlDoc.getElementsByClassName("license")(0).innerHTML
     
  
 End Sub
