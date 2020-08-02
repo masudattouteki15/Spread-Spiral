@@ -1,12 +1,7 @@
 function myFunction() {
   // スプレッドシートのインスタンスを設定する。
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet1 = ss.getSheetByName('プレイヤー1');
-  const sheet2 = ss.getSheetByName('プレイヤー2');
-  const sheet3 = ss.getSheetByName('プレイヤー3');
-  
   let num_sheet = ss.getNumSheets() - 1; // 対象のシートの枚数を取得
-  // const range = sheet.getRange('C3');
   
   // 諸々の変数を設定する。
   const column_of_value = 3; // 読み取る列のインデックス
@@ -31,7 +26,7 @@ function readSubmitValue(sheet, column_of_value, row_submit) {
 }
 
 function InputValue(sheet, column_of_value, arr_value_submit, num_sheet) {
-  let row_player_base = 4;      // 「プレイヤー」
+  let row_player_base = 4; // 単語を格納する行の最上の行インデックス
   for (let i = 0; i < num_sheet; i++) {
     // シート名と同じプレイヤー名の行に書き込まない。
     if (sheet.getSheetName() != sheet.getRange(row_player_base + i,column_of_value - 1).getValue()) {
