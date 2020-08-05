@@ -16,15 +16,16 @@ function doPost(e) {
   if (typeof replyToken === 'undefined') {
     return;
   }
-  
-  var userId   = event.source.userId;
+  var userId   = event.source.userId; // なぜか知らんが、'undefined'になる。（event.sourceまでは取れてる。）
+  // writeLog('うつうつつつ1', 'fewfwqfewf', event.source); // 友達追加した人がグループで話すと、「user」から「room」になる？
   var username = getUserName(userId);
 
   if(event.type == 'message') {
     var userMessage = event.message.text;
     var replyMessages = getShutaMessages();
     sendMessage(replyToken, replyMessages);
-    writeLog(userMessage, replyMessages);
+    writeLog(userMessage, replyMessages, event);
+    // writeLog(userMessage, replyMessages);
     return ContentService.createTextOutput(
       JSON.stringify({'content': 'ok'})
     ).setMimeType(ContentService.MimeType.JSON);
@@ -76,7 +77,7 @@ function getShutaMessages() {
   return messages;
 }
 
-function writeLog(userMessage, replyMessages) {
+function writeLog(userMessage, replyMessages, event) {
   const spreadsheetId = "1Wwaq5O7vzT0OdVongtVI0AmSRh5SCfEd4_HVXnfT3sw";
   const sheetName     = "log_shuta";
   let   spreadsheet   = SpreadsheetApp.openById(spreadsheetId);
@@ -92,5 +93,5 @@ function writeLog(userMessage, replyMessages) {
   sheet.getRange(row - 1, column_of_key).setValue(date);
   sheet.getRange(row - 1, column_of_key + 1).setValue(String(userMessage));
   sheet.getRange(row - 1, column_of_key + 2).setValue(String(replyMessages[0]));
+  sheet.getRange(row - 1, column_of_key + 3).setValue(String(event.type));
 }
-
