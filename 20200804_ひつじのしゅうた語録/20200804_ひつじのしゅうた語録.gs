@@ -67,13 +67,15 @@ function getShutaMessages() {
   let   sheet         = spreadsheet.getSheetByName(sheetName);
   const column_of_key = 1;
   let   line          = "デフォルト";
-  let   row           = 1;
-  while (line != "") {
-    line = sheet.getRange(row, column_of_key).getValue();
-    row++;
+  let   last_row      = 1; // 最終行のインデックス
+  let   selected_row; // 選択された行
+  
+  last_row     = Number(sheet.getRange(2, column_of_key + 5).getValue());
+  selected_row = Math.floor(Math.random() * (last_row)) + 1;
+  if (selected_row == 0 || selected_row == last_row) {
+    selected_row = 1;
   }
-  row = Math.floor(Math.random() * (row - 1)) + 1;
-  let messages = [sheet.getRange(row, column_of_key).getValue()];
+  let messages = [sheet.getRange(selected_row, column_of_key).getValue()];
   return messages;
 }
 
@@ -85,13 +87,12 @@ function writeLog(userMessage, replyMessages, event) {
   const column_of_key = 1;
   let   line          = "デフォルト";
   let   row           = 1;
-  while (line != "") {
-    line = sheet.getRange(row, column_of_key).getValue();
-    row++;
-  }
+  
+  row = Number(sheet.getRange(2, column_of_key + 5).getValue());
   let date    = new Date();
-  sheet.getRange(row - 1, column_of_key).setValue(date);
-  sheet.getRange(row - 1, column_of_key + 1).setValue(String(userMessage));
-  sheet.getRange(row - 1, column_of_key + 2).setValue(String(replyMessages[0]));
-  sheet.getRange(row - 1, column_of_key + 3).setValue(String(event.type));
+  sheet.getRange(row, column_of_key).setValue(date);
+  sheet.getRange(row, column_of_key + 1).setValue(String(userMessage));
+  sheet.getRange(row, column_of_key + 2).setValue(String(replyMessages[0]));
+  sheet.getRange(row, column_of_key + 3).setValue(String(event.type));
+  sheet.getRange(2  , column_of_key + 5).setValue(row + 1);
 }
