@@ -5,7 +5,7 @@
 ### Extension of each OS
 
 ##### - &nbsp; '.vba' : for Excel
-##### - &nbsp; '.gs' &nbsp;: for Google Apps Script on Google Spreadsheet
-##### - &nbsp; '.gh' &nbsp;: for Grasshopper for Rhinoceros
+##### - &nbsp; '.gs' &emsp;: for Google Apps Script on Google Spreadsheet
+##### - &nbsp; '.gh' &emsp;: for Grasshopper for Rhinoceros
 ***
 
