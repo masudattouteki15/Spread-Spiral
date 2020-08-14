@@ -2,7 +2,7 @@
 ##### This repogitory has codes for Excel and Spreadsheet and for Grasshopper for Rhinoceros.
 
 - - -
-### Extension of each OS
+### Extension of each Service
 
 ##### - &nbsp; '.vba' : for Visual Basic for Application on Excel
 ##### - &nbsp; '.gs' &nbsp;: for Google Apps Script on Google Spreadsheet
