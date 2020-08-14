@@ -4,8 +4,8 @@
 - - -
 ### Extension of each OS
 
-##### - &nbsp; '.bat' &nbsp;&emsp;&emsp;&emsp;: for Windows
-##### - &nbsp; '.command' : for Mac
-
+##### - &nbsp; '.vba' : for Excel
+##### - &nbsp; '.gs' &nbsp;: for Google Apps Script on Google Spreadsheet
+##### - &nbsp; '.gh' &nbsp;: for Grasshopper for Rhinoceros
 ***
 
