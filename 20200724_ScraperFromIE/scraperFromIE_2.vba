@@ -29,7 +29,7 @@ Sub testIE()
     '2 end---------------------------------------------
     
     '3 start---------------------------------------------
-    
+    '「HTMLDocument」を使う時は、参照設定の「Microsoft HTML Object Library」にチェック
     Dim htmlDoc As HTMLDocument
     Set htmlDoc = objIE.document
     
