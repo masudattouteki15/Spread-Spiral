@@ -6,7 +6,7 @@ Sub testIE()
     
     ' ' objIE.Visible = True
     
-    ' objIE.navigate "http://piopal015/idworkflow/servlet"
+    ' objIE.navigate "http://<hostname>/idworkflow/servlet"
     
     '1 end---------------------------------------------
     
