@@ -1,5 +1,15 @@
 Sub testIE()
 
+    '1 start---------------------------------------------
+    ' Dim objIE As InternetExplorer
+    ' Set objIE = CreateObject("Internetexplorer.Application")
+    
+    ' ' objIE.Visible = True
+    
+    ' objIE.navigate "http://<hostname>/idworkflow/servlet"
+    
+    '1 end---------------------------------------------
+    
     '2 start---------------------------------------------
     
     Dim shl As Object
