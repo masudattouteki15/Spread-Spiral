@@ -1,4 +1,4 @@
-# Waterstrider
+# Spread-Sprite-Spring
 ##### This repogitory has codes for Excel and Spreadsheet and for Grasshopper for Rhinoceros.
 
 - - -
