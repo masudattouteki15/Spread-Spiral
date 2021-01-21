@@ -14,12 +14,13 @@ Sub DeleteColumn(col_indexes() As Variant)
 End Sub
 
 Function ColumnsValuesRead(ByVal name_of_sheet As String) As Variant
-    
     Dim i As Variant
     Dim j As Variant
-    ' 消したい項目の一覧を取ってくる。（別のシートに置く？）
+    Dim row_index_wanted_to_delete As Variant
+    
     Dim values() As Variant
-    i = NumCounted(name_of_sheet)
+    row_index_wanted_to_delete = 1
+    i = NumCounted(name_of_sheet, row_index_wanted_to_delete)
     
     ReDim values(i - 1)
     For j = 1 To i - 1
@@ -36,10 +37,13 @@ Function ColumnsIndexRead(ByRef values() As Variant) As Variant
     Dim i As Variant
     Dim j As Variant
     j = 1
+    
     Dim num_all_values As Variant
-    num_all_values = NumCounted(ActiveSheet.Name)
+    num_all_values = NumCounted(ActiveSheet.Name, 20)
+    
     Dim indexes() As Variant
     ReDim indexes(num_all_values)
+    
     For i = 1 To num_all_values
         If values(j) = ActiveSheet.Cells(row_midashi, i).Value Then
             indexes(j) = i
@@ -53,10 +57,10 @@ Function ColumnsIndexRead(ByRef values() As Variant) As Variant
     ColumnsIndexRead = indexes
 End Function
 
-Function NumCounted(ByVal name_of_sheet As String) As Variant
+Function NumCounted(ByVal name_of_sheet As String, ByVal row_index As Variant) As Variant
     Dim i As Variant
     i = 1
-    While Worksheets(name_of_sheet).Cells(1, i).Value <> ""
+    While Worksheets(name_of_sheet).Cells(row_index, i).Value <> ""
         i = i + 1
     Wend
     NumCounted = i
