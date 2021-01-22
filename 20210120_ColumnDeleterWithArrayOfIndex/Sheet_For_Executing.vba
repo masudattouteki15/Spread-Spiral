@@ -11,7 +11,6 @@ Sub Button_Del_Click()
     num_of_columns_wanted_to_escape = 3
     
     ' 消したくないヘッダ情報を配列へ避難させる。
-    'Dim values_wanted_to_escape(num_of_rows_wanted_to_escape, num_of_columns_wanted_to_escape) As Variant
     Dim values_wanted_to_escape() As Variant
     ReDim values_wanted_to_escape(num_of_rows_wanted_to_escape, num_of_columns_wanted_to_escape)
     values_wanted_to_escape() = RangeValuesRead(ActiveSheet.Name, num_of_rows_wanted_to_escape, num_of_columns_wanted_to_escape)
