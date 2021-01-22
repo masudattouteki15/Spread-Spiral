@@ -29,7 +29,6 @@ Function RangeValuesRead(ByVal name_of_sheet As String, ByVal num_of_rows As Var
     Next
     
     RangeValuesRead = values
-    
 End Function
 
 Function ColumnsValuesRead(ByVal name_of_sheet As String) As Variant
