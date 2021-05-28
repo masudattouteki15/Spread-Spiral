@@ -22,9 +22,9 @@ function copyFileToTargetFolder() {
   }
 
   // ●実行ステータス入力：完了確認（G7セルへのステータス確認）
-  Utilities.sleep(3000);
+  Utilities.sleep(2000);
   sheet.getRange(7, 7).setValue('Terminated!');
   // ●実行ステータス入力：実行待ち（G7セルへのステータス入力）
-  Utilities.sleep(5000);
+  Utilities.sleep(3000);
   sheet.getRange(7, 7).setValue('Waiting...');
 }
