@@ -20,7 +20,7 @@ function getFileListInFolder() {
     i++;
     var file = files.next();
     sheet.getRange(i, 1+column_for_fileList).setValue(name + file.getName());
-    sheet.getRange(i, 2+column_for_fileList).setValue(file.getUrl());
+    sheet.getRange(i, 2+column_for_fileList).setValue(file.getId());
+    sheet.getRange(i, 3+column_for_fileList).setValue(file.getUrl());
   }
-
 }
