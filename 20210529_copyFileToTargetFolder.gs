@@ -4,7 +4,7 @@ function copyFileToTargetFolder() {
     OutputFileName,
     OutputFileAmount,
     sheetName = '【出力結果】フォルダのURL',
-    ss;
+    ss,
     column_index;
   ss    = SpreadsheetApp.getActive();
   sheet = ss.getSheetByName(sheetName);
