@@ -7,7 +7,7 @@ function getFileListInFolder() {
     ss;
     name = "",
     i = 3, //フォルダを処理する行位置
-    column_for_fileList = 3;
+    column_for_fileList = 6; // F列のインデックス
   ss = SpreadsheetApp.getActive();
   sheet = ss.getSheetByName(sheetName);
   folder_id = sheet.getRange(1, 2).getValue();
@@ -19,8 +19,8 @@ function getFileListInFolder() {
   while(files.hasNext()) {
     i++;
     var file = files.next();
-    sheet.getRange(i, 1+column_for_fileList).setValue(name + file.getName());
-    sheet.getRange(i, 2+column_for_fileList).setValue(file.getId());
-    sheet.getRange(i, 3+column_for_fileList).setValue(file.getUrl());
+    sheet.getRange(i, 0+column_for_fileList).setValue(name + file.getName());
+    sheet.getRange(i, 1+column_for_fileList).setValue(file.getId());
+    sheet.getRange(i, 2+column_for_fileList).setValue(file.getUrl());
   }
 }
