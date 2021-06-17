@@ -8,7 +8,7 @@ function copyFileToTargetFolder() {
     column_index;
   ss    = SpreadsheetApp.getActive();
   sheet = ss.getSheetByName(sheetName);
-  column_index = 8; // H列のインデックス
+  column_index = 10; // J列のインデックス
   OutputFolderId   = sheet.getRange(4, column_index).getValue();         // 出力先フォルダID（H4セルのフォルダID）
   OutputFileName   = sheet.getRange(5, column_index).getValue();         // 出力ファイル名（H5セルのファイル名）
   OutputFileAmount = Number(sheet.getRange(6, column_index).getValue()); // 出力ファイル数（H6セルのファイル数）
